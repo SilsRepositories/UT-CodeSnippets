@@ -1,3 +1,4 @@
+// CREATE EVENT
 global.BorderWidth = 570;
 global.BorderHeight = 120;
 
@@ -16,3 +17,8 @@ instance_create_depth(320, 384, 1, obj_BulletBoard);
 
 // Starts a 30-frame timer (half a second at 60FPS)
 alarm[0] = 30;
+
+// ALARM 0 EVENT
+instance_create_depth(random(640), -40, -1, obj_Bullet);
+instance_create_depth(obj_Soul.x, -40, -1, obj_Bullet);
+alarm[0] = choose(10, 20, 30);
