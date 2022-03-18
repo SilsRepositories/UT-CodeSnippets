@@ -31,3 +31,21 @@ draw_set_color(c_white);
 draw_rectangle(border_l - 4, border_u - 4, border_r + 4, border_d + 4, false);
 draw_set_color(c_black);
 draw_rectangle(border_l, border_u, border_r, border_d, false);
+
+// Draw the HP and LV, as well as initialise variables for the HP bar length
+var hp_barwidth = global.PlayerMaxHP;
+var hp_barwidth_fill = global.PlayerHP;
+draw_set_font(font_battleui_hp);
+draw_set_color(c_white);
+draw_text(30, 400, global.Name + "    LV " + string(global.PlayerLV));
+draw_text(320 + hp_barwidth, 400, string(global.PlayerHP) + " / " + string(global.PlayerMaxHP));
+
+// Draw "HP"
+draw_set_font(font_battleui_widgets);
+draw_text(255, 400, "HP");
+
+// Draw the health bar
+draw_set_color(c_red);
+draw_rectangle(300, 400, 300 + hp_barwidth, 418, false);
+draw_set_color(c_yellow);
+draw_rectangle(300, 400, 300 + hp_barwidth_fill, 418, false);
