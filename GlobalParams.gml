@@ -13,12 +13,20 @@ global.PlayerAttack = 20;
 global.PlayerDefense = 0;
 global.InvFrames = 0;
 
+// Menu necessities
+global.UISelectionMenu = 0;
+global.BattleMenu = -1;
+
+// Just one monster for now
+global.Monster[0] = instance_create_depth(320, 260, 1, obj_TestMonster);
+
+// Inventory for item menu
+global.Item[0] = "Pie";
+global.Item[1] = "Stick";
+global.Item[2] = "L.Hero";
+global.Item[3] = "S.Apron";
+
+global.CanFlee = true;
+
 instance_create_depth(320, 384, 1, obj_BulletBoard);
-
-// Starts a 30-frame timer (half a second at 60FPS)
-alarm[0] = 30;
-
-// ALARM 0 EVENT
-instance_create_depth(random(640), -40, -1, obj_Bullet);
-instance_create_depth(obj_Soul.x, -40, -1, obj_Bullet);
-alarm[0] = choose(10, 20, 30);
+obj_Soul.visible = false;
