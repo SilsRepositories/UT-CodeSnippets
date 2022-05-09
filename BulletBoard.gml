@@ -6,6 +6,8 @@ current_height = 0;
 Dialogue = noone;
 Fight = noone;
 Act = noone;
+ActML = noone;
+ActMR = noone;
 ItemL = noone;
 ItemR = noone;
 Mercy = noone;
@@ -36,6 +38,10 @@ if (current_width == 570 && current_height == 120) {
 		Dialogue.visible = false;
 		Fight.visible = false;
 		Act.visible = false;
+		
+		ActML.visible = false;
+		ActMR.visible = false;
+		
 		ItemL.visible = false;
 		ItemR.visible = false;
 		Mercy.visible = false;
@@ -61,6 +67,11 @@ if (current_width == 570 && current_height == 120) {
 		Act.TextLength = string_length(Act.TextToDraw);
 		Act.CanAdvance = false;
 		Act.visible = false;
+		
+		ActML = instance_create_depth(border_l + 50, border_u + 15, 0, obj_TextElement);
+		ActML.visible = false;
+		ActMR = instance_create_depth(border_l + 300, border_u + 15, 0, obj_TextElement);
+		ActMR.visible = false;
 		
 		ItemL = instance_create_depth(border_l + 50, border_u + 15, 0, obj_TextElement);
 		for (var i = 0; i < array_length(global.Item); i += 2) {
@@ -115,6 +126,25 @@ if (current_width == 570 && current_height == 120) {
 		Fight.visible = true;
 	if (global.BattleMenu == 2)
 		Act.visible = true;
+		
+	if (global.BattleMenu == 2.5) {
+		ActML.visible = true;
+		ActMR.visible = true;
+		ActML.TextToDraw = "";
+		for (var j = 0; j < array_length(global.Monster[global.MRN].Act); j += 2) {
+			ActML.TextToDraw += "* " + global.Monster[global.MRN].Act[j] + "&";
+		}
+		ActML.TextLength = string_length(ActML.TextToDraw);
+		ActML.CanAdvance = false;
+		
+		ActMR.TextToDraw = "";
+		for (var j = 1; j < array_length(global.Monster[global.MRN].Act); j += 2) {
+			ActMR.TextToDraw += "* " + global.Monster[global.MRN].Act[j] + "&";
+		}
+		ActMR.TextLength = string_length(ActMR.TextToDraw);
+		ActMR.CanAdvance = false;
+	}
+		
 	if (global.BattleMenu == 3) {
 		ItemL.visible = true;
 		ItemR.visible = true;
