@@ -82,7 +82,7 @@ if (global.UISelectionMenu > -1) {
 	}
 	
 	// Navigation controls
-	if global.BattleMenu != 2 && global.BattleMenu != 3 {
+	if global.BattleMenu != 2 && global.BattleMenu != 2.5 && global.BattleMenu != 3 {
 		if keyboard_check_pressed(vk_up) {
 			global.UISelectionMenu -= 1;
 			audio_play_sound(MenuMove, 1, false);
@@ -137,8 +137,17 @@ if (global.UISelectionMenu > -1) {
 			case 2:
 				// ACT menu
 				MonsterReferenceNum = global.UISelectionMenu;
+				global.MRN = MonsterReferenceNum;
 				global.BattleMenu = 2.5;
 				global.UISelectionMenu = 0;
+				break;
+			case 2.5:
+				// ACT commands
+				with (global.Monster[global.MRN]) {
+					event_user(global.UISelectionMenu);
+				}
+				global.BattleMenu = -2;
+				global.UISelectionMenu = -1;
 				break;
 			case 3:
 				// Consume an item, we'll look at this in Episode 5
