@@ -119,6 +119,10 @@ if (global.UISelectionMenu > -1) {
 			case 0:
 				// FIGHT, ACT, ITEM, MERCY
 				global.BattleMenu = (global.UISelectionMenu + 1);
+				if (global.BattleMenu == 3 && array_length(global.Item) == 0) {
+					global.BattleMenu = 0;
+					exit;
+				}
 				
 				// Keeps your original option in mind on the four buttons at the bottom
 				BelowUIReferenceNum = global.UISelectionMenu;
@@ -150,9 +154,10 @@ if (global.UISelectionMenu > -1) {
 				global.UISelectionMenu = -1;
 				break;
 			case 3:
-				// Consume an item, we'll look at this in Episode 5
-				global.BattleMenu = -1;
-				global.UISelectionMenu = 0;
+				// Item menu
+				UseItem(global.UISelectionMenu);
+				global.BattleMenu = -2;
+				global.UISelectionMenu = -1;
 				break;
 			case 4:
 				// Spare or Flee from a monster, we'll look at this in Episode 6
