@@ -26,6 +26,9 @@ global.Item[1] = "Stick";
 global.Item[2] = "L.Hero";
 global.Item[3] = "S.Apron";
 
+global.PlayerArmor = "Bandage";
+global.PlayerWeapon = "Real Knife";
+
 global.CanFlee = true;
 
 instance_create_depth(320, 384, 1, obj_BulletBoard);
