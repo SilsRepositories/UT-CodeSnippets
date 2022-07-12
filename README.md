@@ -21,4 +21,4 @@ Game Maker Studio 2 is not cheap software, but this should be enough for you to 
 If anyone is skilled enough, they can translate this code to Unity, Unreal, Godot or some other free games engine, but since Undertale and Deltarune were both made in this engine, I decided to go with this one since it's the easiest one I know.
 
 Thank you for your patience.
-- QSV
+Yours truly, QSV
