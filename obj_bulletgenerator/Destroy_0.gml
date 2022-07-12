@@ -1,0 +1,11 @@
+instance_destroy(obj_Bullet);
+instance_destroy(obj_Platform);
+instance_destroy(obj_GasterBlaster);
+instance_destroy(obj_GasterBlasterBeam);
+obj_Soul.visible = false;
+global.BattleMenu = -1;
+global.UISelectionMenu = obj_ButtonController.BelowUIReferenceNum;
+global.BorderWidth = 570;
+global.BorderHeight = 120;
+obj_BulletBoard.current_offsetx = 0;
+obj_BulletBoard.current_offsety = 0;
