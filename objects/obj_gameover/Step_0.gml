@@ -32,7 +32,7 @@ if (Stage == 4) {
 	}
 }
 if (Stage == 5) {
-	if (room == global.CurrentRoom) {
+	if (room == global.GORoom) {
 		room_persistent = false;
 		room_restart();
 		instance_destroy();

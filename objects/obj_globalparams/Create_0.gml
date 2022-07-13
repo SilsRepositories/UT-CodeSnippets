@@ -9,6 +9,8 @@ global.PlayerGOL = 0;
 global.PlayerLV = 1;
 global.Name = "";
 
+global.GORoom = Room_Name;
+
 global.ENTRY_POINT = -1;
 
 global.PlayerAttack = 0;
