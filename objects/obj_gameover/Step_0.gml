@@ -21,7 +21,13 @@ if (Stage == 4) {
 	image_alpha -= 0.01;
 	if (image_alpha < -0.2) {
 		audio_stop_all();
-		LOAD();
+		if file_exists("sdt")
+			LOAD();
+		else {
+			room_goto(Room_Name);
+			instance_destroy();
+			exit;
+		}
 		Stage = 5;
 	}
 }
