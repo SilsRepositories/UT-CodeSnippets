@@ -10,6 +10,7 @@ if Fading {
 }
 else {
 	image_alpha -= 0.04;
+	room_persistent = false;
 	if (image_alpha <= 0) {
 		instance_destroy();
 	}
