@@ -1,7 +1,5 @@
-What you see in this repository is the engine that I have created through my "How To Make An Undertale Fangame" series on YouTube:
-https://www.youtube.com/playlist?list=PLWYL5xPwLmRosbSCSovbx94OajJTaeYhV
-
-There is a lot that I have covered in all 10 episodes:
+What you see in this repository is the engine that I have created through my "How To Make An Undertale Fangame" series on YouTube.
+The series is no longer public on my channel, but here is what it would've taught you per episode:
 - Episode 1 - Bullet Board
 - Episode 2 - Battle UI and Soul Damage
 - Episode 3 - Menu Navigation and Text Writing
